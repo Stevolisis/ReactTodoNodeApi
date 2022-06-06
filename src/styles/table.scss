@@ -1,0 +1,58 @@
+@import './variables2';
+
+.tableholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+}
+
+.header{
+    padding: 30px 0 8px 0;
+    color:black
+
+}
+
+.main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:80vw;
+    color:$color3;
+}
+
+.scroll{
+    overflow: auto;
+}
+table{
+	font-size: 12px;
+}
+
+thead{
+    background: $color1;
+
+
+  th{
+    padding:12px 40px;
+    border:0;
+}
+}
+
+tbody{
+    background: rgb(13, 62, 168);
+    color:$color3;
+
+    td{
+        padding:12px 40px;
+        text-align: center;
+    }
+}
+
+
+
+@media(max-width:700px){
+    .main{
+        width: 90vw;
+    }
+}
