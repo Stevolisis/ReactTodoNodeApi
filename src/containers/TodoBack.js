@@ -9,7 +9,7 @@ export default function TodoBack(){
   const [buttonstatus,setButtonstatus]=useState("Add");
 
   function fetchtodo(){
-    axios.get('http://localhost:80/gettodos',{withCredentials:true})
+    axios.get('https://client.stephcom.com.ng/gettodos',{withCredentials:true})
     .then(res=>{   
         setTodos(res.data.data);
     }).catch(err=>{
@@ -27,7 +27,7 @@ export default function TodoBack(){
         filtered:false,
         status:'none'
       }
-        axios.post('http://localhost:80/addtodo',todotoadd,{withCredentials:true})
+        axios.post('https://client.stephcom.com.ng/addtodo',todotoadd,{withCredentials:true})
         .then(res=>{
           fetchtodo();
           setName("")
@@ -41,7 +41,7 @@ export default function TodoBack(){
         id:editname,
         name:name
       }
-        axios.post('http://localhost:80/edittodo',todotoedit,{withCredentials:true})
+        axios.post('https://client.stephcom.com.ng/edittodo',todotoedit,{withCredentials:true})
         .then(res=>{
           fetchtodo();
           setName("")
@@ -58,7 +58,7 @@ export default function TodoBack(){
 
 
   function deletetodo(item){
-      axios.post('http://localhost:80/deletetodo',{id:item},{withCredentials:true})
+      axios.post('https://client.stephcom.com.ng/deletetodo',{id:item},{withCredentials:true})
       .then(res=>{
 
        if(res.data.data==='Successful'){
@@ -74,7 +74,7 @@ export default function TodoBack(){
 
 
   function completetodo(item,status){
-    axios.post('http://localhost:80/completetodo',{id:item,complete:!status},{withCredentials:true})
+    axios.post('https://client.stephcom.com.ng/completetodo',{id:item,complete:!status},{withCredentials:true})
     .then(res=>{
      if(res.data.data==='Successful'){
       fetchtodo();
@@ -89,7 +89,7 @@ export default function TodoBack(){
 
 
   function completedtodo(){
-    axios.get('http://localhost:80/completedtodo',{withCredentials:true})
+    axios.get('https://client.stephcom.com.ng/completedtodo',{withCredentials:true})
     .then(res=>{
       if(res.data.data==='Successful'){
         fetchtodo();
@@ -107,7 +107,7 @@ export default function TodoBack(){
 
 
   function activetodo(){
-    axios.get('http://localhost:80/activetodo',{withCredentials:true})
+    axios.get('https://client.stephcom.com.ng/activetodo',{withCredentials:true})
     .then(res=>{
       if(res.data.data==='Successful'){
         fetchtodo();
@@ -124,7 +124,7 @@ export default function TodoBack(){
   }
 
   function alltodo(){
-    axios.get('http://localhost:80/alltodo',{withCredentials:true})
+    axios.get('https://client.stephcom.com.ng/alltodo',{withCredentials:true})
     .then(res=>{
       if(res.data.data==='Successful'){
         fetchtodo();
